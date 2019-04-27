@@ -45,6 +45,10 @@ export class AudioComponent implements OnInit {
 
   togglePlay() {
     if (this.audiox !== null) {
+      /** 重新播放
+      * this.audiox.currentTime = 0;
+        this.audiox.play();
+      */
       if (this.audiox.paused) {
         this.audiox.play();
       } else {
