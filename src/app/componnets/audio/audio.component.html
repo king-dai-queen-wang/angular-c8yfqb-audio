@@ -1,0 +1,14 @@
+<audio #audio hidden controls="controls" preload="preload">
+  <source [src]="musicSrc" type="audio/ogg" />
+  <source [src]="musicSrc" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+
+<div class="box" [ngClass]="{'active':playMediaFlag}" (click)="togglePlay(audio)">
+  <div class="wifi-symbol">
+    <div class="wifi-circle first"></div>
+    <div class="wifi-circle second"></div>
+    <div class="wifi-circle third"></div>
+  </div>
+</div>
+{{duration}}s

@@ -1,7 +1,6 @@
 <h1>
   {{title}}
 </h1>
-<audio controls="controls">
-  <source src="../assets/song.ogg" type="audio/ogg">
-  Your browser does not support the audio tag.
-</audio>
+<app-audio
+  [musicSrc]="musicSrc"
+></app-audio>
