@@ -2,9 +2,11 @@
   {{title}}
 </h1>
 <app-audio
-  [musicSrc]="musicSrc"
-></app-audio>
+  clickType="pause"
+  [musicSrc]="musicSrc2"
+></app-audio> 点击暂停
 
 <app-audio
-  [musicSrc]="musicSrc2"
-></app-audio>
+  clickType="replay"
+  [musicSrc]="musicSrc"
+></app-audio>点击重播

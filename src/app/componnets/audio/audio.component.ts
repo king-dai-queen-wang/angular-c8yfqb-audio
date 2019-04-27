@@ -8,6 +8,7 @@ import {Component, ElementRef, Input, OnInit, Renderer, TemplateRef, ViewChild} 
 export class AudioComponent implements OnInit {
   @Input() musicSrc;
   @ViewChild('audio') audio: ElementRef;
+  @Input() clickType: string = 'pause';
   public audiox: HTMLAudioElement
   duration: string;
   public playMediaFlag: boolean = false;
@@ -46,15 +47,19 @@ export class AudioComponent implements OnInit {
   togglePlay() {
     if (this.audiox !== null) {
       /** 重新播放
-      * this.audiox.currentTime = 0;
-        this.audiox.play();
+      *
       */
-      if (this.audiox.paused) {
+      if (this.clickType === 'pause') {
+        if (this.audiox.paused) {
+          this.audiox.play();
+        } else {
+          this.audiox.pause();
+        }
+      }
+      if (this.clickType === 'replay') {
+        this.audiox.currentTime = 0;
         this.audiox.play();
-      } else {
-        this.audiox.pause();
       }
     }
   }
-
 }
