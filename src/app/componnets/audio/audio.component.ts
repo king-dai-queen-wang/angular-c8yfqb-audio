@@ -27,6 +27,12 @@ export class AudioComponent implements OnInit {
     this.audiox.ontimeupdate = () => {
       this.duration = this.audioCurretTime;
     };
+    this.audiox.onplaying = () => {
+      this.playMediaFlag = true;
+    };
+    this.audiox.onpause = () => {
+      this.playMediaFlag = false;
+    };
   }
 
   get audioDuration() {
@@ -41,10 +47,8 @@ export class AudioComponent implements OnInit {
     if (this.audiox !== null) {
       if (this.audiox.paused) {
         this.audiox.play();
-        this.playMediaFlag = true;
       } else {
         this.audiox.pause();
-        this.playMediaFlag = false;
       }
     }
   }
