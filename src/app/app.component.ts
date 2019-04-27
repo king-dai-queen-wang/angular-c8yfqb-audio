@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app works!';
   musicSrc = 'http://localhost:4200/assets/song.ogg';
+  musicSrc2 = 'http://localhost:4200/assets/alwaysWithMe.mp3';
 }
